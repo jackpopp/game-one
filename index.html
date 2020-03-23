@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        @keyframes animatedBackground {
+            from { background-position: 0 0; }
+            to { background-position: 100% 0; }
+        }
+
+        body {
+            background-image: url('./img/darkPurple.png');
+            font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+            animation: animatedBackground 40s linear infinite;
+        }
+        .container {
+            width: 600px;
+            height: 600px;
+            margin: 20px auto;
+            border: 6px solid #33363e;
+            border-radius: 10px;
+            display: block;
+            background-image: url('./img/blue.png');
+            animation: animatedBackground 5s linear infinite;
+            position: relative;
+        }
+
+        .start-game {
+            position: absolute;
+            width: 100%;
+        }
+
+        .start-game-text {
+            width: 200px;
+            margin: 290px auto;
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease-in ;
+        }
+
+        .start-game-text:hover {
+            font-size: 22px;
+            text-shadow: 0px 0px 10px white;
+        }
+
+        .info {
+            width: 600px;
+            margin: 0 auto;
+            color: #ccc;
+            text-align: center;
+        }
+
+        .timer {
+            width: 88px;
+            display: inline-block;
+        }
+
+        .hidden {
+            display: none;
+            visibility: hidden;
+        }
+    </style>
+
+    <div class="info">
+        <h1>Round: <span class="round">1</span></h1>
+        <p>Meteors Destroyed: <span class="count">0</span></p>
+        <p>Time Left: <span class="timer">30</span></p>
+    </div>
+
+    <div class="container">
+        <div class="start-game">
+            <div class="start-game-text">Start Game</div>
+        </div>
+        <canvas id="game" width="600" height="600"></canvas>
+    </div>
+
+    
+    <script src="./game.js"></script>
+</body>
+</html>
