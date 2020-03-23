@@ -57,9 +57,15 @@ class Game {
         this.blobSize = 25;
         this.blobs = [];
     
+        this.resetScores();
         this.startGame();
     }
     
+    resetScores() {
+        document.querySelector('.round').innerHTML = this.round;
+        document.querySelector('.count').innerHTML = this.meteorCount;
+    }
+
     startGame() {
         this.startTime = new Date().getTime()/1000;
         this.createBlobs();
