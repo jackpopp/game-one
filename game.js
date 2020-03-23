@@ -133,9 +133,14 @@ class Game {
             this.blobs.splice( index, 1 );
         } );
 
-        document.querySelector( '.count' ).innerHTML = this.meteorCount;
+        //document.querySelector( '.count' ).innerHTML = this.meteorCount;
+
+        this.context.font = "18px Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace";
+        this.context.fillStyle = 'white';
+        this.context.fillText(`Meteors Destroyed: ${this.meteorCount}`, 15, 30);
+
         this.currentTime = (new Date().getTime()/1000 - this.startTime);
-        const timeLeft = (this.roundLength - this.currentTime).toFixed(2);
+        const timeLeft = (this.roundLength - this.currentTime).toFixed(0);
         document.querySelector( '.timer' ).innerHTML = Math.abs(timeLeft);
 
         if ( timeLeft <= 0) {
